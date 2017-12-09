@@ -41,19 +41,15 @@
                     </div>
                 </div>
             </nav>
-            
+
             <div class="container">
                 @yield('content')
             </div> <!-- /container -->
 
-            <nav class="navbar navbar-default navbar-fixed-bottom">
-                <div class="container">
-                    <footer>
-                        <h4>&copy; 2016 Company, Inc.</h4>
-                    </footer>
-                </div> 
-            </nav>
         </div> <!-- /app -->
+
+        @include('partials.bottom-navbar')
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

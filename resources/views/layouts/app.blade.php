@@ -56,13 +56,7 @@
             @yield('content')
         </div> <!-- /app -->
 
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                <footer>
-                    <h4>&copy; 2016 Company, Inc.</h4>
-                </footer>
-            </div> 
-        </nav>
+        @include('partials.bottom-navbar')
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
