@@ -9,7 +9,6 @@
 namespace App;
 
 use Socialite;
-use Illuminate\Auth\Events\Registered;
 
 class LoginUser {
 

@@ -44,11 +44,6 @@ class LoginController extends Controller
         $this->loginUser = $loginUser;
     }
     
-    public function showLoginPage()
-    {
-       return view('login');
-    }
-    
     /**
      * Specific Route to Socialite's Login
      * 

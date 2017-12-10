@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Email;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -62,8 +62,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {   
-        Log::info('Saving user profile: '.$data['email']);
+    {
         //setup the email
         $email = Email::firstOrNew(['email' => $data['email']]);
         
@@ -72,14 +71,23 @@ class RegisterController extends Controller
         
         // Verify if user is new. record all user data.
         if(!$user->exists) {
+
             $user->name = $data['name'];
             $user->email = $data['email'];
-            $user->emails()->associate($email);
             $user->is_active = 1;
             $email->is_primary = 1;
+            
+            // Create user data
+            $user->save();
+            
+            // Associate email data
+            $user->emails()->save($email);
         }
         
+        // Update password
         $user->password = bcrypt($data['password']);
+        
+        $user->save();
         
         return $user;
     }

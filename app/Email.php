@@ -16,4 +16,11 @@ class Email extends Model
     protected $fillable = [
         'email',
     ];
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
