@@ -8,12 +8,6 @@
                 <div class="panel-heading">Home Page</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
                     Welcome Home!
                 </div>
             </div>

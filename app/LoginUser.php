@@ -39,24 +39,24 @@ class LoginUser {
         if (!$user->id) {
             $user->name = $provider_user->name;
             $user->avatar = $provider_user->avatar;
-            $user->is_active = 1;
+            $user->confirmed = 0;
             $email->is_primary = 1;
         }
 
         // if the user exists already, but isn't active then activate and grab the avatar.  
         // (this is for the scenario where someone registers their email address, but never activates their account using 
         // normal registration process.. we want to activate the user and clear the activation token etc.
-        if ($user->id && !$user->is_active) {
-            $user->is_active = 1;
+        if ($user->id && !$user->confirmed) {
+            $user->confirmed = 1;
             $user->activation_token = null;
             $user->avatar = $provider_user->avatar;
         }
             
         // Verify if user is new. Prepare user to second stage of register if so.
         if(!$user->exists) {
-            $retorno = view('auth.register',['name' => $provider_user->name, 'email' => $provider_user->email]);
+            $retorno = view('auth.register',['name' => $provider_user->name, 'email' => $provider_user->email])->with('warning', 'New User: Register a password for your local account.');
         } else {
-            $retorno = redirect()->action('HomeController@showDashboard');
+            $retorno = redirect()->action('HomeController@showDashboard')->with('status', 'User registered');
         }
 
         // these should only actually do anything if there is something to update.. but maybe wrap these up..

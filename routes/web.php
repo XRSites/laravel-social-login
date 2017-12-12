@@ -25,5 +25,5 @@ Route::get('dashboard', 'HomeController@showDashboard')
 Route::get('login/{provider}', 'Auth\LoginController@auth')
     ->where(['provider' => 'facebook|google|twitter|github']);
 
-Route::get('login/{provider}/callback', 'Auth\LoginController@login')
+Route::get('login/{provider}/callback', 'Auth\LoginController@callback')
     ->where(['provider' => 'facebook|google|twitter|github']);

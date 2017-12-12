@@ -27,7 +27,7 @@
 
                             <div class="col-md-6">
                                 @if(!empty($name))
-                                <input id="name" type="text" class="form-control" name="name" value="{{$name}}" required autofocus disabled>
+                                <input id="name" type="text" class="form-control" name="name" value="{{$name}}" required autofocus readonly>
                                 @else
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                 @endif
@@ -46,7 +46,7 @@
 
                             <div class="col-md-6">
                                 @if(!empty($email))
-                                <input id="email" type="email" class="form-control" name="email" value="{{$email}}" required disabled>
+                                <input id="email" type="email" class="form-control" name="email" value="{{$email}}" required readonly>
                                 @else
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                 @endif

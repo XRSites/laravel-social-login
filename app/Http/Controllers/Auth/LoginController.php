@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Log;
-
 use App\LoginUser;
 use App\Exceptions\SocialAuthException;
 
@@ -29,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
     
     protected $loginUser;
 
@@ -55,9 +53,8 @@ class LoginController extends Controller
         return $this->loginUser->authenticate($provider);
     }
  
-    public function login($provider)
+    public function callback($provider)
     {
-        Log::info('Login user with: '.$provider);
         try {
             return $this->loginUser->login($provider);
         } catch (SocialAuthException $e) {

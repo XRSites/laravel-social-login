@@ -6,6 +6,7 @@ use App\User;
 use App\Email;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -74,7 +75,7 @@ class RegisterController extends Controller
 
             $user->name = $data['name'];
             $user->email = $data['email'];
-            $user->is_active = 1;
+            $user->confirmed = 1;
             $email->is_primary = 1;
             
             // Create user data
@@ -85,7 +86,7 @@ class RegisterController extends Controller
         }
         
         // Update password
-        $user->password = bcrypt($data['password']);
+        $user->password = Hash::make($data['password']);
         
         $user->save();
         

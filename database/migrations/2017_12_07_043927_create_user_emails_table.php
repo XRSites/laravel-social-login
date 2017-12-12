@@ -19,7 +19,7 @@ class CreateUserEmailsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('email');
             $table->string('password')->nullable();
-            $table->integer('is_primary');
+            $table->boolean('is_primary')->default(0);
             $table->timestamps();
         });
     }

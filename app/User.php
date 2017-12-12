@@ -26,6 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $casts = [
+        'confirmed' => 'boolean',
+    ];
     
     public function oauthIdentities()
     {
@@ -35,15 +39,5 @@ class User extends Authenticatable
     public function emails()
     {
         return $this->hasMany(Email::class);
-    }
-
-    /**
-     * Get the password for the user.
-     *
-     * @return string
-     */
-    public function getAuthPassword()
-    {
-        return $this->emails()->where("is_primary", "=", 1)->password;
     }
 }

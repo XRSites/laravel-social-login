@@ -36,3 +36,12 @@
         </div>
     </div>
 </nav>
+@if (session('status'))
+<div class="alert alert-success">
+    {{ session('status') }}
+</div>
+@elseif (session('warning'))
+<div class="alert alert-warning">
+    {{ session('warning') }}
+</div>
+@endif
