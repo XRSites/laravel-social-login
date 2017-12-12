@@ -56,7 +56,7 @@ class LoginUser {
         if(!$user->exists) {
             $retorno = view('auth.register',['name' => $provider_user->name, 'email' => $provider_user->email])->with('warning', 'New User: Register a password for your local account.');
         } else {
-            $retorno = redirect()->action('HomeController@showDashboard')->with('status', 'User registered');
+            $retorno = redirect()->action('HomeController@showDashboard');
         }
 
         // these should only actually do anything if there is something to update.. but maybe wrap these up..

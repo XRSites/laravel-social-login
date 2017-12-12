@@ -37,11 +37,11 @@
     </div>
 </nav>
 @if (session('status'))
-<div class="alert alert-success">
+<div class="alert alert-success text-center">
     {{ session('status') }}
 </div>
 @elseif (session('warning'))
-<div class="alert alert-warning">
+<div class="alert alert-warning text-center">
     {{ session('warning') }}
 </div>
 @endif
