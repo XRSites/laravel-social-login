@@ -100,7 +100,7 @@ use RegistersUsers;
     protected function registered(Request $request, $user)
     {
         // Alerts user creation
-        $request->session()->flash('status', 'User was successful registered!');
+        return redirect('dashboard')->with('status', __('You were registered.'));
     }
 
 }
