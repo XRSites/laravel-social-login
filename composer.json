@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "XRSites/laravel-social-login",
+    "description": "The Laravel Framework: XRSites Social Login.",
+    "keywords": ["framework", "laravel", "XRSItes", "Social Login"],
     "license": "MIT",
     "type": "project",
     "require": {
