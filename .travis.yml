@@ -3,6 +3,10 @@ language: php
 matrix:
   fast_finish: true
   include:
+    - php: 5.6
+      env: setup=lowest
+    - php: 5.6
+      env: setup=stable
     - php: 7.0.21
     - php: 7.0.21
       env: setup=lowest
