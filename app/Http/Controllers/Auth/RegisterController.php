@@ -95,7 +95,7 @@ use RegistersUsers;
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  mixed  $user
-     * @return mixed
+     * @return \Illuminate\Http\RedirectResponse
      */
     protected function registered(Request $request, $user)
     {
