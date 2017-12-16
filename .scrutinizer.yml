@@ -24,6 +24,7 @@ build:
         before:
             - php -r "file_exists('.env') || copy('.env.example', '.env');"
             - php artisan key:generate
+            - touch database/database.sqlite
     tests:
         override:
             -
