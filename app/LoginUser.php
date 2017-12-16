@@ -9,6 +9,7 @@
 namespace App;
 
 use Socialite;
+use Illuminate\Support\Facades\Session;
 
 class LoginUser {
 
@@ -54,7 +55,8 @@ class LoginUser {
             
         // Verify if user is new. Prepare user to second stage of register if so.
         if(!$user->exists) {
-            $retorno = view('auth.register',['name' => $provider_user->name, 'email' => $provider_user->email])->with('warning', 'New User: Register a password for your local account.');
+            Session::flash('warning', 'New User: Register a password for your local account.');
+            $retorno = view('auth.register',['name' => $provider_user->name, 'email' => $provider_user->email]);
         } else {
             $retorno = redirect()->action('HomeController@showDashboard');
         }
