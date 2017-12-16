@@ -4,8 +4,14 @@ checks:
         duplication: true
         
 filter:
-    excluded_paths: [vendor/*]
-    excluded_paths: [tests/*]
+    paths:
+        - 'app/*'
+    excluded_paths:
+        - 'app/views/*'
+        - 'app/config/*'
+        - 'app/database/*'
+        - 'vendor/*'
+        - 'tests/*'
 
 tools:
     php_mess_detector: true
