@@ -5,6 +5,7 @@ checks:
         
 filter:
     excluded_paths: [vendor/*]
+    excluded_paths: [tests/*]
 
 tools:
     php_mess_detector: true
@@ -13,10 +14,13 @@ tools:
         excluded_dirs: [vendor]
         
 build:
+    dependencies:
+        before:
+            - php artisan key:generate
     tests:
         override:
             -
-                command: 'vendor/bin/phpunit --coverage-clover=some-file'
+                command: 'vendor/bin/phpunit --coverage-clover=xrsites'
                 coverage:
-                    file: 'some-file'
+                    file: 'xrsites'
                     format: 'clover'
