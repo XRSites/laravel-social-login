@@ -44,5 +44,6 @@ install:
   - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
   - php -r "file_exists('.env') || copy('.env.example', '.env');"
   - php artisan key:generate
+  - touch database/database.sqlite
 
 script: vendor/bin/phpunit
