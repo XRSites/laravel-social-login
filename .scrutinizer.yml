@@ -7,9 +7,6 @@ filter:
     paths:
         - 'app/*'
     excluded_paths:
-        - 'app/views/*'
-        - 'app/config/*'
-        - 'app/database/*'
         - 'vendor/*'
         - 'tests/*'
 
@@ -22,9 +19,8 @@ tools:
 build:
     dependencies:
         before:
-            - php -r "file_exists('.env') || copy('.env.example', '.env');"
+            - php -r "file_exists('.env') || copy('.env.scrutinizer', '.env');"
             - php artisan key:generate
-            - touch database/database.sqlite
     tests:
         override:
             -
