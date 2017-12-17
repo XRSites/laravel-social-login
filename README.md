@@ -21,9 +21,10 @@ Just call the following in your prompt
 
     $ composer create-project xrsites/laravel-social-login=dev-master your-site
 
-Then enter your newly created project and build your database
+Then enter your newly created project, create your database file (SQLite) and build your database
     
     $ cd your-site
+    $ touch database/database.sqlite
     $ php artisan migrate
     
 Finally, start your application
@@ -33,4 +34,5 @@ Finally, start your application
 ## See also
 
 - [Laravel documentation](https://laravel.com/docs)
+- [SQLite](https://www.sqlite.org/)
 - [PHP documentation](http://php.net/docs.php)
