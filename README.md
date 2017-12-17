@@ -27,9 +27,11 @@ Then enter your newly created project, create your database file (SQLite) and bu
     $ touch database/database.sqlite
     $ php artisan migrate
     
-Finally, start your application
+Finally, start your application and open your browser on the following URL
 
     $ php artisan serve
+    
+    http://localhost:8000
     
 ## See also
 
