@@ -13,6 +13,6 @@ class OauthIdentity extends Model
      * @var array
      */
     protected $fillable = [
-        'provider', 'provider_user_id',
+        'provider', 'provider_user_id', 'access_token', 'refresh_token'
     ];
 }

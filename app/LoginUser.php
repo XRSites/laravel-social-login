@@ -33,8 +33,9 @@ class LoginUser {
             $user = User::firstOrNew(['id' => $email->user_id]);
         }
 
-        // save token
+        // save tokens
         $oauth_identity->access_token = $provider_user->token;
+        $oauth_identity->refresh_token = $provider_user->refreshToken;
 
         // if we don't have a user id, then it is a new user.. fill from the provider..
         if (!$user->id) {
