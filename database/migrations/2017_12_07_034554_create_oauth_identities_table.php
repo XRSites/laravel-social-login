@@ -20,6 +20,7 @@ class CreateOauthIdentitiesTable extends Migration
             $table->string('provider_user_id');
             $table->string('provider');
             $table->string('access_token');
+            $table->string('refresh_token');
             $table->timestamps();
 
             $table->unique([ 'provider_user_id','provider' ]);
