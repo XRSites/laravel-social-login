@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class LoginUser {
 
     public function authenticate($provider) {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver($provider)->with(["access_type" => "offline", "prompt" => "consent select_account"])->redirect();
     }
 
     public function login($provider = 'google') {
