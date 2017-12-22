@@ -24,6 +24,7 @@ class LoginControllerTest extends TestCase {
     public function testAuth() {
         $provider = \Mockery::mock('Laravel\Socialite\Contracts\Provider');
         $provider->shouldReceive('redirect')->andReturn('Redirected');
+        $provider->shouldReceive('with')->with(["access_type" => "offline", "prompt" => "consent select_account"])->andReturnSelf();
         Socialite::shouldReceive('driver')->once()->with('google')->andReturn($provider);
         $response = $this->get('/login/google');
         $response->assertSuccessful();
@@ -38,6 +39,7 @@ class LoginControllerTest extends TestCase {
         $abstractUser->name = str_random(10);
         $abstractUser->avatar = 'https://en.gravatar.com/userimage';
         $abstractUser->token = str_random(32);
+        $abstractUser->refreshToken = str_random(32);
 // Get the api user object here
         $abstractUser->shouldReceive('getId')
                 ->andReturn($abstractUser->id)

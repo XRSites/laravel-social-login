@@ -32,6 +32,7 @@ class LoginUserTest extends TestCase {
     public function testAuthenticate() {
         $provider = \Mockery::mock('Laravel\Socialite\Contracts\Provider');
         $provider->shouldReceive('redirect')->andReturn('Redirected');
+        $provider->shouldReceive('with')->with(["access_type" => "offline", "prompt" => "consent select_account"])->andReturnSelf();
         Socialite::shouldReceive('driver')->once()->with('google')->andReturn($provider);
         $returnValue = $this->object->authenticate('google');
         $this->assertEquals($returnValue, 'Redirected');
