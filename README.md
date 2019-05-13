@@ -19,7 +19,7 @@ Yet Another [Laravel Framework](https://laravel.com) Social Login Project with [
 
 Just call the following in your prompt
 
-    $ composer create-project xrsites/laravel-social-login=dev-master your-site
+    $ composer create-project xrsites/laravel-social-login your-site
 
 Then enter your newly created project, create your database file (SQLite) and build your database
     
