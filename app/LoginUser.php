@@ -16,7 +16,7 @@ class LoginUser {
     public function authenticate($provider) {
         return Socialite::driver($provider)
             ->with(["access_type" => "offline", "prompt" => "consent select_account"])
-            ->scopes(['read:user', 'public_repo', 'offline_access'])
+            //->scopes(['read:user', 'public_repo', 'offline_access'])
             ->redirect();
     }
 
