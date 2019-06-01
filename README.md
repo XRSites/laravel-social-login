@@ -1,6 +1,9 @@
 [![Build Status](https://travis-ci.org/XRSites/laravel-social-login.svg?branch=master)](https://travis-ci.org/XRSites/laravel-social-login)
 [![Code Coverage](https://scrutinizer-ci.com/g/XRSites/laravel-social-login/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/XRSites/laravel-social-login/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/XRSites/laravel-social-login/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/XRSites/laravel-social-login/?branch=master)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/xrsites/laravel-social-login.svg)
+![Packagist Version](https://img.shields.io/packagist/v/xrsites/laravel-social-login.svg)
+![Packagist](https://img.shields.io/packagist/l/xrsites/laravel-social-login.svg)
 
 # Social Login by XRSites
 Yet Another [Laravel Framework](https://laravel.com) Social Login Project with [Socialite](https://github.com/laravel/socialite)
