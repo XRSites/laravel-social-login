@@ -18,8 +18,7 @@ tools:
         
 build:
     dependencies:
-        before:
-            - composer install --no-interaction --prefer-dist --no-suggest
+        after:
             - php -r "file_exists('.env') || copy('.env.scrutinizer', '.env');"
             - php artisan key:generate
     tests:
