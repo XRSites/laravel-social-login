@@ -5,7 +5,10 @@
         "framework",
         "laravel",
         "XRSites",
-        "Social Login"
+        "Social Login",
+        "socialite",
+        "social-login",
+        "laravel-framework"
     ],
     "license": "MIT",
     "type": "project",
