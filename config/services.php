@@ -38,14 +38,19 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/login/github/callback',
+        'redirect' => env('APP_URL') . '/login/github/callback',
     ],
     
     'facebook' => [
         'client_id' => '1120224634748024',
         'client_secret' => '7303691d807eaff92bbb1657b96b1e',
-        'redirect' => 'http://localhost:8000/login/facebook/callback',
+        'redirect' => env('APP_URL') . '/login/facebook/callback',
     ],
     
-    
+    'meli' => [
+        'client_id' => env('MELI_CLIENT_ID'),
+        'client_secret' => env('MELI_CLIENT_SECRET'),
+        'redirect' => env('APP_URL') . '/login/meli/callback',
+    ],
+
 ];

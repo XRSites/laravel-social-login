@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class, // added line for Socialite
  
+        Kolovious\MeliSocialite\MeliSocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +230,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // added line for Socialite
+        
+        // Other alias...
+        
+        'Meli' => Kolovious\MeliSocialite\Facade\Meli::class,
     ],
 
 ];
