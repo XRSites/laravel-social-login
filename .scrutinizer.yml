@@ -21,7 +21,13 @@ build:
         after:
             - php -r "file_exists('.env') || copy('.env.scrutinizer', '.env');"
             - php artisan key:generate
-    tests:
+
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - php-scrutinizer-run
+    tests-and-coverage:
         override:
             -
                 command: 'vendor/bin/phpunit --coverage-clover=xrsites'
