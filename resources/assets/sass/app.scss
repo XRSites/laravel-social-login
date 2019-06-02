@@ -16,3 +16,14 @@
 .jumbotron {
     background-color: white !important; 
 }
+
+.svg-meli::before {
+    content: url('../img/ml-icon.svg')
+}
+
+.btn-meli {
+    background-color: #ffe700;
+    color: #fff;
+    background-color: #ffe700;
+    border-color: rgba(0, 0, 0, 0.2);
+}

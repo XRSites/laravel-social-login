@@ -69,6 +69,7 @@
                                 <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"/></a>
                                 <a href="{{ url('login/google') }}" class="btn btn-social-icon btn-google"><span class="fa fa-google"/></a>
                                 <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><span class="fa fa-github"/></a>
+                                <a href="{{ url('login/meli') }}" class="btn btn-social-icon btn-meli"><span class="fa svg-meli"/></a>
                             </div>
                         </div>
                     </form>
