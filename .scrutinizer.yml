@@ -28,10 +28,9 @@ build:
                 override:
                     - php-scrutinizer-run
                     
-    tests-and-coverage:
-        override:
-            -
-                command: 'vendor/bin/phpunit --coverage-clover=xrsites'
-                coverage:
-                    file: 'xrsites'
-                    format: 'clover'
+        tests-and-coverage:
+            override:
+                - command: 'vendor/bin/phpunit --coverage-clover=xrsites'
+                    coverage:
+                        file: 'xrsites'
+                        format: 'php-clover'
