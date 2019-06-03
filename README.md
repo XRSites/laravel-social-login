@@ -37,8 +37,19 @@ Finally, start your application and open your browser on the following URL
     
     http://localhost:8000
     
+## Integration with Dashboards
+
+You can use this project as base to install Admin Panels.
+
+### Voyager
+
+It's pretty straight forward. Follow the steps in [Voyager's Github Site](https://github.com/the-control-group/voyager) after creating an user with password using your localhost's [register page](http://localhost:8000/register)
+
+**IMPORTANT:** it's important that you follow all the steps until start your server using `php artisan serve`, and follow all the steps to create your new user. If for some reason you don't create a password, try to create your account using simple e-mail/password in [register page](http://localhost:8000/register).
+    
 ## See also
 
 - [Laravel documentation](https://laravel.com/docs)
 - [SQLite](https://www.sqlite.org/)
 - [PHP documentation](http://php.net/docs.php)
+- [Voyager - The Missing Laravel Admin](https://laravelvoyager.com/)
